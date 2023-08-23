@@ -1,0 +1,77 @@
+{% extends 'admin/adminlayout.html' %}
+
+{% load static %}
+
+{%block title%}
+<title>products</title>
+
+{% endblock %}
+
+
+{% block main-content %}
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+
+            {% for msg in messages %}
+
+            {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="alert alert-success">
+                {{msg}}
+            </div>
+           
+            {% endif %}
+
+            {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger">
+                {{msg}}
+            </div>
+            {% endif %}
+
+            {% endfor %}
+
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Stock Quantity</th>
+                    <th>Product Description</th>
+                    <th>Product Image</th>
+                    <th>Category</th>
+                    <th style="padding: 0 30px;">Action</th>
+                </tr>
+                {% for product in products %}
+                <tr>
+                    <td>{{product.Product_name}}</td>
+                    <td>{{product.Product_price}}</td>
+                    <td>{{product.stock}}</td>
+                    <td>{{product.Product_description}}</td>
+                    <td><img src="/{{product.Product_image}}" alt="{{product.Product_name}}" width="100"></td>
+
+                    <td>{{product.Category}}</td>
+                    <td>
+                        <a href="/products/updateproduct/{{product.id}}" class="btn btn-primary"><i class="fa-sharp fa-solid fa-pen-to-square "></i></a>
+                        
+                        <a href="/products/deleteproduct/{{product.id}}" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this product?')"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                    </td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+    <!-- {% for Product in products %}
+    <h1>{{Product.Product_name}}</h1>
+    <h2>{{Product.Product_price}}</h2>
+    <h2>{{Product.stock}}</h2>
+    <h2>{{Product.Product_description}}</h2>
+    <img src="{{Product.Product_image}}" alt="image" width="500">
+    <h2>{{Product.created_at}}</h2>
+    {% endfor %} -->
+
+    <!-- <img src="{% static 'images/a.jpg'}" alt="" width="500"> -->
+
+    {% endblock %}

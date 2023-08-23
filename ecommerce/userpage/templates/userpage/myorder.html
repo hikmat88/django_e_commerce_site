@@ -1,0 +1,61 @@
+{% extends 'layouts.html' %}
+
+{% load static %}
+
+{%block title%}
+
+<title>Ecommerce-Myorder</title>
+{% include 'userpage/header.html' %}
+
+{% endblock %}
+
+
+{% block main-content %}
+
+<!-- start of cart section  -->
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        {% for msg in messages %}
+
+        {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <div class="alert alert-success">
+            {{msg}}
+        </div>
+       
+        {% endif %}
+
+        {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <div class="alert alert-danger">
+            {{msg}}
+        </div>
+        {% endif %}
+
+        {% endfor %}
+        <table class="table table-bordered table-striped my-5">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quentity</th>
+                    <th>Total Price</th>
+                    <th>Product Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.product.Product_name}}</td>
+                    <td>{{item.quentity}}</td>
+                    <td>Rs.{{item.total_price}}</td>
+
+                    <td> <img src="/{{item.product.Product_image}}" alt="{{item.product.Product_name}}" width="100"></td>
+                </tr>   
+                {% endfor %} 
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- end of cart section  -->
+{% include 'userpage/footer.html' %}
+{% endblock %}

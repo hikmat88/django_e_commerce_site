@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {{section.title}}
+    {% endblock %}
+
+    {% load static %}
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-end">
+          <div class="col-md-1 mt-3">
+            <button class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight">
+              Menu
+            </button>
+            <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel" style="width:300px;">
+              <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">Admin Dashboard</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="list-unstyled">
+                  <li><a href="/admins/dashboard" class="text-decoration-none text-white">Dashboard</a></li>
+                  <li><a href="#" class="text-decoration-none text-white">Users</a></li>
+                  <li><a href="/products/show" class="text-decoration-none text-white">Products</a></li>
+                  <li><a href="/products/addproduct" class="text-decoration-none text-white">Add Products</a></li>
+                  <li><a href="/products/allcategory" class="text-decoration-none text-white">Categories</a></li>
+                  <li><a href="/products/addcategory" class="text-decoration-none text-white">Add Categories</a></li>
+                  <li><a href="/admins/order" class="text-decoration-none text-white">Orders</a></li>
+                </ul>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-decoration-none text-white">
+                      <b>Name : </b> admin
+                    </a></li>
+                  <li><a href="#" class="text-decoration-none text-white">
+                      <b>Email : </b> admin@gmail.com
+                    </a></li>
+                </ul>
+                <div class="img">
+                  <img
+                    src="C:\Users\dell\Desktop\python\Django\ecommerce\adminpage\hum.jpg"
+                    alt="" class="img-fluid rounded-circle" width="200">
+                </div>
+                <a href="#" class="btn btn-warning text-decoration-none">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+     
+    
+    {% block main-content %}
+
+    {% endblock %}
+
+    <!--bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <!-- load custom css  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</body>
+
+</html>

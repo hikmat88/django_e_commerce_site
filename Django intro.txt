@@ -1,0 +1,35 @@
+Django ->  web framework of python
+Its a mvt design module
+M - Model (Database)
+V - View(Functions)
+T- Template (UI: User Interface)
+
+D:\django-project\ecommerce>python manage.py makemigrations -> READY TO MIGRATE
+python manage.py migrate -> ACTUAL MIGRATION
+
+python manage.py createsuperuser
+Username :parbati
+Password:parbati
+
+http://127.0.0.1:8000/
+
+python manage.py runserver -> to start server
+
+bootstrap install-> pip install django-bootstrap-form
+
+
+
+
+go to  django-crispy-forms
+->pip install django-crispy-forms
+again go to crispy-bootstrap4 2022.1
+->pip install crispy-bootstrap4
+->url:https://pypi.org/project/crispy-bootstrap4/
+
+
+font awsome:
+https://cdnjs.com/libraries/font-awesome
+
+
+
+

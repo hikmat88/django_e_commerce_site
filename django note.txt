@@ -1,0 +1,8 @@
+Django -> web framework of python
+
+its a MVT design module
+M-model(database)
+v- view(Functions)
+T- Template (UI: User Interface)
+
+python manage.py makemigrations

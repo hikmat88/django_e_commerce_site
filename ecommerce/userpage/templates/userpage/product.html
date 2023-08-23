@@ -1,0 +1,36 @@
+{% extends 'layouts.html' %}
+
+{% load static %}
+
+
+{%block title%}
+<title>Ecommerce-Product</title>
+{% include 'userpage/header.html' %}
+
+{% endblock %}
+
+{% block main-content %}
+
+
+
+<!-- start of product section  -->
+<div class="container-fluid my-5">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for product in products %}
+        <div class="col">
+            <div class=" card" >
+                <img src="/{{product.Product_image}}" class="card-img-top" alt="image" width="200px">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.Product_name}}</h5>
+                    <h3 class="card-title">{{product.Product_price}}</h3>
+                    <a href="/productdetails/{{product.id}}" class="btn btn-success">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- end of product section  -->
+{% include 'userpage/footer.html' %}
+{% endblock %}
